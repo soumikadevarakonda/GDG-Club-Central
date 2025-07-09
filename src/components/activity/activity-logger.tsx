@@ -17,10 +17,10 @@ import { useToast } from "@/hooks/use-toast";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 const mockActivities = [
-    { id: 1, name: "Tech Talk: AI in Web Dev", user: "Alex Doe", type: "Event Attendance", date: "2024-05-15", status: "Completed" },
-    { id: 2, name: "Code Review for Project Alpha", user: "Eva Green", type: "Task Completion", date: "2024-05-20", status: "Completed" },
-    { id: 3, name: "Organize Q3 Hackathon", user: "Maria Garcia", type: "Task Completion", date: "2024-06-01", status: "In Progress" },
-    { id: 4, name: "Attend Flutter Meetup", user: "John P.", type: "Event Attendance", date: "2024-06-05", status: "Completed" },
+    { id: 1, name: "Tech Talk: AI in Web Dev", user: "Soumika Devarakonda", type: "Event Attendance", date: "2024-05-15", status: "Completed", avatar: "https://placehold.co/40x40.png", hint: "woman face" },
+    { id: 2, name: "Code Review for Project Alpha", user: "Naisha Srinivas", type: "Task Completion", date: "2024-05-20", status: "Completed", avatar: "https://placehold.co/40x40.png", hint: "woman smiling" },
+    { id: 3, name: "Organize Q3 Hackathon", user: "Vijay Atul", type: "Task Completion", date: "2024-06-01", status: "In Progress", avatar: "https://placehold.co/40x40.png", hint: "man face" },
+    { id: 4, name: "Attend Flutter Meetup", user: "Saketh Kumar", type: "Event Attendance", date: "2024-06-05", status: "Completed", avatar: "https://placehold.co/40x40.png", hint: "man smiling" },
 ];
 
 export function ActivityLogger() {
@@ -120,7 +120,7 @@ export function ActivityLogger() {
                                         <TableCell className="hidden sm:table-cell">
                                             <div className="flex items-center gap-2">
                                                 <Avatar className="h-6 w-6">
-                                                    <AvatarImage src={`https://placehold.co/40x40.png`} data-ai-hint="person face" />
+                                                    <AvatarImage src={activity.avatar} data-ai-hint={activity.hint} />
                                                     <AvatarFallback>{activity.user.charAt(0)}</AvatarFallback>
                                                 </Avatar>
                                                 <span>{activity.user}</span>

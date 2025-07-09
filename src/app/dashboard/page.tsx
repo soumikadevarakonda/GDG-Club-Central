@@ -8,9 +8,9 @@ import { Users, Calendar, FolderKanban, TrendingUp } from "lucide-react";
 import { HeroBanner } from "@/components/dashboard/hero-banner";
 
 const recentActivities = [
-  { name: "Eva Green", avatar: "https://placehold.co/40x40.png", hint: "woman face", action: "uploaded a new resource:", item: "Advanced TypeScript Guide", time: "2h ago" },
-  { name: "John P.", avatar: "https://placehold.co/40x40.png", hint: "man face", action: "RSVP'd to event:", item: "Summer Tech Fest 2024", time: "5h ago" },
-  { name: "Maria Garcia", avatar: "https://placehold.co/40x40.png", hint: "woman smiling", action: "logged an activity:", item: "Mentored new members", time: "1d ago" },
+  { name: "Soumika Devarakonda", avatar: "https://placehold.co/40x40.png", hint: "woman face", action: "uploaded a new resource:", item: "Advanced TypeScript Guide", time: "2h ago" },
+  { name: "Priyansh Saxena", avatar: "https://placehold.co/40x40.png", hint: "man face", action: "RSVP'd to event:", item: "Summer Tech Fest 2024", time: "5h ago" },
+  { name: "Aditya Vaitla", avatar: "https://placehold.co/40x40.png", hint: "woman smiling", action: "logged an activity:", item: "Mentored new members", time: "1d ago" },
 ];
 
 export default function DashboardPage() {
@@ -36,7 +36,7 @@ export default function DashboardPage() {
                 <EventCard 
                     title="Summer Tech Fest 2024"
                     date="August 15, 2024"
-                    location="Google Campus, Mountain View"
+                    location="Google Campus, Hyderabad, India"
                     description="Our biggest event of the year! Join us for a full day of tech talks, workshops, and networking."
                     image="https://placehold.co/600x400.png"
                     dataAiHint="tech conference"

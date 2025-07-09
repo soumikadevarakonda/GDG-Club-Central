@@ -64,8 +64,8 @@ export function MainSidebar() {
                 <AvatarFallback>AD</AvatarFallback>
             </Avatar>
             <div className="flex flex-col group-data-[collapsible=icon]:hidden">
-                <p className="font-semibold text-sidebar-foreground">Alex Doe</p>
-                <p className="text-sm text-sidebar-foreground/70">alex.doe@email.com</p>
+                <p className="font-semibold text-sidebar-foreground">Soumika Devarakonda</p>
+                <p className="text-sm text-sidebar-foreground/70">soumikadev@gmail.com</p>
             </div>
              <Link href="/" className="ml-auto group-data-[collapsible=icon]:hidden">
                 <Button variant="ghost" size="icon" className="text-sidebar-foreground hover:bg-sidebar-accent/20 hover:text-sidebar-foreground">

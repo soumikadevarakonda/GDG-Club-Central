@@ -6,7 +6,7 @@ const mockEvents = [
     {
         title: "Summer Tech Fest 2024",
         date: "August 15, 2024",
-        location: "Google Campus, Mountain View",
+        location: "Google Campus, Hyderabad, India",
         description: "Our biggest event of the year! Join us for a full day of tech talks, workshops, and networking opportunities with industry experts.",
         image: "https://placehold.co/600x400.png",
         dataAiHint: "tech conference",
@@ -22,7 +22,7 @@ const mockEvents = [
     {
         title: "Flutter Forward Extended",
         date: "September 5, 2024",
-        location: "Community Hub, Downtown",
+        location: "GDG, KL University",
         description: "Catch up on the latest announcements from Flutter Forward and see live demos from local developers.",
         image: "https://placehold.co/600x400.png",
         dataAiHint: "mobile phone apps",
