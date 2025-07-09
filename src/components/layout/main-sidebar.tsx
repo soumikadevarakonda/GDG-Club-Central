@@ -10,10 +10,11 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { BookHeart, LayoutDashboard, LogOut } from "lucide-react";
+import { LayoutDashboard, LogOut } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { GdgLogo } from "../icons/gdg-logo";
 
 export function MainSidebar() {
   const pathname = usePathname();
@@ -25,9 +26,9 @@ export function MainSidebar() {
             <Button variant="ghost" size="icon" className="md:hidden" asChild>
                 <SidebarTrigger />
             </Button>
-            <BookHeart className="w-8 h-8 text-primary" />
+            <GdgLogo className="w-8 h-8 text-primary" />
             <div className="flex flex-col group-data-[collapsible=icon]:hidden">
-                <h2 className="font-semibold text-lg font-headline">Club Central</h2>
+                <h2 className="font-semibold text-lg font-headline">GDG Club Central</h2>
             </div>
         </div>
       </SidebarHeader>
