@@ -45,7 +45,7 @@ export function PollCard({ question = defaultQuestion, options = defaultOptions 
     };
 
     return (
-        <Card className="flex flex-col">
+        <Card className="flex flex-col hover:scale-[1.02]">
             <CardHeader>
                 <CardTitle>{question}</CardTitle>
             </CardHeader>

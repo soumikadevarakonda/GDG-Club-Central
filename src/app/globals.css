@@ -23,19 +23,29 @@
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
     --ring: 217 89% 61%;
+    --radius: 1rem;
+
+    /* Google Colors */
+    --google-blue: 217 89% 61%;
+    --google-red: 4 81% 58%;
+    --google-yellow: 45 96% 51%;
+    --google-green: 145 63% 42%;
+
+    /* Chart colors using Google Palette */
     --chart-1: 217 89% 61%;
     --chart-2: 4 81% 58%;
     --chart-3: 45 96% 51%;
     --chart-4: 145 63% 42%;
     --chart-5: 27 87% 67%;
-    --radius: 0.75rem;
-    --sidebar-background: 220 40% 12%;
-    --sidebar-foreground: 210 20% 90%;
-    --sidebar-primary: 217 89% 61%;
+    
+    /* Sidebar */
+    --sidebar-background: 240 6% 10%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 217 89% 70%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 217 89% 61%;
+    --sidebar-accent: 215 14% 24%;
     --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 220 40% 20%;
+    --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217 89% 70%;
   }
   .dark {
@@ -58,16 +68,27 @@
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 217 89% 70%;
+    --radius: 1rem;
+
+    /* Google Colors */
+    --google-blue: 217 89% 61%;
+    --google-red: 4 81% 58%;
+    --google-yellow: 45 96% 51%;
+    --google-green: 145 63% 42%;
+
+    /* Chart colors */
     --chart-1: 217 89% 61%;
     --chart-2: 4 81% 58%;
     --chart-3: 45 96% 51%;
     --chart-4: 145 63% 42%;
     --chart-5: 27 87% 67%;
+
+    /* Sidebar */
     --sidebar-background: 240 6% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-foreground: 0 0% 98%;
     --sidebar-primary: 217 89% 70%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 217 89% 70%;
+    --sidebar-accent: 215 14% 24%;
     --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217 89% 70%;

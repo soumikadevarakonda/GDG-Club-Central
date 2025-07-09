@@ -5,6 +5,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Users, Calendar, FolderKanban, TrendingUp } from "lucide-react";
+import { HeroBanner } from "@/components/dashboard/hero-banner";
 
 const recentActivities = [
   { name: "Eva Green", avatar: "https://placehold.co/40x40.png", hint: "woman face", action: "uploaded a new resource:", item: "Advanced TypeScript Guide", time: "2h ago" },
@@ -15,16 +16,13 @@ const recentActivities = [
 export default function DashboardPage() {
   return (
     <div className="space-y-8">
-      <div>
-        <h1 className="text-3xl font-bold">Welcome back, Alex!</h1>
-        <p className="text-muted-foreground">Here's a snapshot of your club's activities.</p>
-      </div>
+      <HeroBanner />
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        <StatCard title="Total Members" value="128" icon={Users} />
-        <StatCard title="Upcoming Events" value="4" icon={Calendar} />
-        <StatCard title="Shared Resources" value="76" icon={FolderKanban} />
-        <StatCard title="Member Engagement" value="+12%" icon={TrendingUp} description="since last month" />
+        <StatCard title="Total Members" value={128} icon={Users} />
+        <StatCard title="Upcoming Events" value={4} icon={Calendar} />
+        <StatCard title="Shared Resources" value={76} icon={FolderKanban} />
+        <StatCard title="Member Engagement" value={12} icon={TrendingUp} description="since last month" prefix="+" suffix="%" />
       </div>
 
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -40,12 +38,16 @@ export default function DashboardPage() {
                     date="August 15, 2024"
                     location="Google Campus, Mountain View"
                     description="Our biggest event of the year! Join us for a full day of tech talks, workshops, and networking."
+                    image="https://placehold.co/600x400.png"
+                    dataAiHint="tech conference"
                 />
                 <EventCard 
                     title="AI/ML Workshop"
                     date="July 28, 2024"
                     location="Virtual / Google Meet"
                     description="A hands-on workshop covering the fundamentals of machine learning with TensorFlow."
+                    image="https://placehold.co/600x400.png"
+                    dataAiHint="laptop code"
                 />
             </CardContent>
           </Card>

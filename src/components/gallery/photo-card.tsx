@@ -8,12 +8,12 @@ interface PhotoCardProps {
 
 export function PhotoCard({ src, alt, dataAiHint }: PhotoCardProps) {
     return (
-        <div className="group relative aspect-square overflow-hidden rounded-lg">
+        <div className="group relative aspect-square overflow-hidden rounded-2xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105">
             <Image 
                 src={src} 
                 alt={alt} 
                 fill 
-                className="object-cover transition-transform group-hover:scale-105" 
+                className="object-cover transition-transform group-hover:scale-110" 
                 data-ai-hint={dataAiHint}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />

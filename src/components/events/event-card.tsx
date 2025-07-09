@@ -17,10 +17,10 @@ interface EventCardProps {
 
 export function EventCard({ title, date, location, description, image, dataAiHint }: EventCardProps) {
     return (
-        <Card className="flex flex-col">
+        <Card className="flex flex-col hover:scale-[1.02]">
             {image && (
                  <div className="aspect-[16/9] relative">
-                    <Image src={image} alt={title} fill className="rounded-t-lg object-cover" data-ai-hint={dataAiHint}/>
+                    <Image src={image} alt={title} fill className="rounded-t-2xl object-cover" data-ai-hint={dataAiHint}/>
                  </div>
             )}
             <CardHeader>

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { PhotoCard } from "@/components/gallery/photo-card";
-import { PlusCircle } from "lucide-react";
+import { GalleryVertical, PlusCircle } from "lucide-react";
 
 const mockImages = [
   { src: "https://placehold.co/600x400.png", alt: "Team photo from the 2023 Hackathon", dataAiHint: "group people" },
@@ -16,8 +16,9 @@ const mockImages = [
 export default function GalleryPage() {
   return (
     <div className="space-y-8">
-      <div className="flex items-center justify-between">
-        <div>
+      <div className="relative flex items-center justify-between overflow-hidden rounded-2xl p-4">
+        <GalleryVertical className="absolute -top-8 -left-8 size-32 text-muted/50 opacity-20" />
+        <div className="relative z-10">
           <h1 className="text-3xl font-bold">Gallery</h1>
           <p className="text-muted-foreground">
             A collection of photos from our events and meetups.

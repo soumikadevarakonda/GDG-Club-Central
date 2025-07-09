@@ -1,12 +1,13 @@
 import { Button } from "@/components/ui/button";
-import { PlusCircle } from "lucide-react";
+import { BarChart3, PlusCircle } from "lucide-react";
 import { PollCard } from "@/components/polls/poll-card";
 
 export default function PollsPage() {
   return (
     <div className="space-y-8">
-      <div className="flex items-center justify-between">
-        <div>
+      <div className="relative flex items-center justify-between overflow-hidden rounded-2xl p-4">
+        <BarChart3 className="absolute -top-8 -left-8 size-32 text-muted/50 opacity-20" />
+        <div className="relative z-10">
           <h1 className="text-3xl font-bold">Polls</h1>
           <p className="text-muted-foreground">
             Make your voice heard and see what other members think.
