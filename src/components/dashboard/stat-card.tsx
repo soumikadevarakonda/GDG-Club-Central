@@ -1,19 +1,18 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { LucideIcon } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 interface StatCardProps {
     title: string;
     value: number;
-    icon: LucideIcon;
+    icon: ReactNode;
     description?: string;
     prefix?: string;
     suffix?: string;
 }
 
-export function StatCard({ title, value, icon: Icon, description, prefix="", suffix="" }: StatCardProps) {
+export function StatCard({ title, value, icon, description, prefix="", suffix="" }: StatCardProps) {
     const [animatedValue, setAnimatedValue] = useState(0);
 
     useEffect(() => {
@@ -41,7 +40,7 @@ export function StatCard({ title, value, icon: Icon, description, prefix="", suf
         <Card className="hover:scale-[1.02]">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm font-medium">{title}</CardTitle>
-                <Icon className="h-5 w-5 text-muted-foreground" />
+                {icon}
             </CardHeader>
             <CardContent>
                 <div className="text-3xl font-bold">

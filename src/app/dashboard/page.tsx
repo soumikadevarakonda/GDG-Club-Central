@@ -19,10 +19,10 @@ export default function DashboardPage() {
       <HeroBanner />
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        <StatCard title="Total Members" value={128} icon={Users} />
-        <StatCard title="Upcoming Events" value={4} icon={Calendar} />
-        <StatCard title="Shared Resources" value={76} icon={FolderKanban} />
-        <StatCard title="Member Engagement" value={12} icon={TrendingUp} description="since last month" prefix="+" suffix="%" />
+        <StatCard title="Total Members" value={128} icon={<Users className="h-5 w-5 text-muted-foreground" />} />
+        <StatCard title="Upcoming Events" value={4} icon={<Calendar className="h-5 w-5 text-muted-foreground" />} />
+        <StatCard title="Shared Resources" value={76} icon={<FolderKanban className="h-5 w-5 text-muted-foreground" />} />
+        <StatCard title="Member Engagement" value={12} icon={<TrendingUp className="h-5 w-5 text-muted-foreground" />} description="since last month" prefix="+" suffix="%" />
       </div>
 
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
