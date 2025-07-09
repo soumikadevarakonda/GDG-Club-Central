@@ -1,48 +1,81 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ResourceHub } from "@/components/resources/resource-hub";
-import { ActivityLogger } from "@/components/activity/activity-logger";
-import { PollCard } from "@/components/polls/poll-card";
+import { StatCard } from "@/components/dashboard/stat-card";
+import { EventCard } from "@/components/events/event-card";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import { Users, Calendar, FolderKanban, TrendingUp } from "lucide-react";
+
+const recentActivities = [
+  { name: "Eva Green", avatar: "https://placehold.co/40x40.png", hint: "woman face", action: "uploaded a new resource:", item: "Advanced TypeScript Guide", time: "2h ago" },
+  { name: "John P.", avatar: "https://placehold.co/40x40.png", hint: "man face", action: "RSVP'd to event:", item: "Summer Tech Fest 2024", time: "5h ago" },
+  { name: "Maria Garcia", avatar: "https://placehold.co/40x40.png", hint: "woman smiling", action: "logged an activity:", item: "Mentored new members", time: "1d ago" },
+];
 
 export default function DashboardPage() {
   return (
-    <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
-      <div className="flex items-center justify-between space-y-2">
-        <h2 className="text-3xl font-bold tracking-tight font-headline">Dashboard</h2>
+    <div className="space-y-8">
+      <div>
+        <h1 className="text-3xl font-bold">Welcome back, Alex!</h1>
+        <p className="text-muted-foreground">Here's a snapshot of your club's activities.</p>
       </div>
-      <Tabs defaultValue="resources" className="space-y-4">
-        <TabsList className="grid w-full grid-cols-3 md:w-auto md:inline-flex">
-          <TabsTrigger value="resources">Resource Hub</TabsTrigger>
-          <TabsTrigger value="activity">Activity Log</TabsTrigger>
-          <TabsTrigger value="polls">Polls</TabsTrigger>
-        </TabsList>
 
-        <TabsContent value="resources" className="space-y-4">
-          <ResourceHub />
-        </TabsContent>
-        <TabsContent value="activity" className="space-y-4">
-          <ActivityLogger />
-        </TabsContent>
-        <TabsContent value="polls" className="space-y-4">
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <StatCard title="Total Members" value="128" icon={Users} />
+        <StatCard title="Upcoming Events" value="4" icon={Calendar} />
+        <StatCard title="Shared Resources" value="76" icon={FolderKanban} />
+        <StatCard title="Member Engagement" value="+12%" icon={TrendingUp} description="since last month" />
+      </div>
+
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="lg:col-span-2">
+          <Card>
+            <CardHeader>
+              <CardTitle>Upcoming Events</CardTitle>
+              <CardDescription>Don't miss out on what's next!</CardDescription>
+            </CardHeader>
+            <CardContent className="grid gap-4 md:grid-cols-2">
+                <EventCard 
+                    title="Summer Tech Fest 2024"
+                    date="August 15, 2024"
+                    location="Google Campus, Mountain View"
+                    description="Our biggest event of the year! Join us for a full day of tech talks, workshops, and networking."
+                />
+                <EventCard 
+                    title="AI/ML Workshop"
+                    date="July 28, 2024"
+                    location="Virtual / Google Meet"
+                    description="A hands-on workshop covering the fundamentals of machine learning with TensorFlow."
+                />
+            </CardContent>
+          </Card>
+        </div>
+        <div>
             <Card>
                 <CardHeader>
-                    <CardTitle>Community Polls</CardTitle>
-                    <CardDescription>Make your voice heard and see what other members think.</CardDescription>
+                    <CardTitle>Recent Activity</CardTitle>
+                    <CardDescription>See what your fellow members are up to.</CardDescription>
                 </CardHeader>
-                <CardContent className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                    <PollCard />
-                    <PollCard 
-                        question="What should be our next workshop topic?"
-                        options={["Advanced React Patterns", "Intro to Docker", "UI/UX Design Fundamentals", "Public Speaking"]}
-                    />
-                    <PollCard 
-                        question="Best time for weekly meetups?"
-                        options={["Monday 7 PM", "Wednesday 6 PM", "Friday 5 PM", "Saturday 11 AM"]}
-                    />
+                <CardContent>
+                    <ul className="space-y-4">
+                        {recentActivities.map((activity, index) => (
+                            <li key={index} className="flex items-center gap-4">
+                                <Avatar>
+                                    <AvatarImage src={activity.avatar} data-ai-hint={activity.hint} />
+                                    <AvatarFallback>{activity.name.charAt(0)}</AvatarFallback>
+                                </Avatar>
+                                <div className="text-sm">
+                                    <p><span className="font-semibold">{activity.name}</span> {activity.action}</p>
+                                    <p className="font-medium text-primary">{activity.item}</p>
+                                </div>
+                                <time className="ml-auto text-xs text-muted-foreground">{activity.time}</time>
+                            </li>
+                        ))}
+                    </ul>
                 </CardContent>
             </Card>
-        </TabsContent>
-      </Tabs>
+        </div>
+      </div>
     </div>
   );
 }

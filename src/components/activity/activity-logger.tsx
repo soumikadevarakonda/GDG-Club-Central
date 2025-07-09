@@ -8,17 +8,19 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { CalendarIcon } from "lucide-react";
+import { CalendarIcon, PlusCircle } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
 import { format } from "date-fns";
 import { Badge } from "../ui/badge";
 import { useToast } from "@/hooks/use-toast";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 const mockActivities = [
-    { id: 1, name: "Tech Talk: AI in Web Dev", type: "Event Attendance", date: "2024-05-15", status: "Completed" },
-    { id: 2, name: "Code Review for Project Alpha", type: "Task Completion", date: "2024-05-20", status: "Completed" },
-    { id: 3, name: "Organize Q3 Hackathon", type: "Task Completion", date: "2024-06-01", status: "In Progress" },
+    { id: 1, name: "Tech Talk: AI in Web Dev", user: "Alex Doe", type: "Event Attendance", date: "2024-05-15", status: "Completed" },
+    { id: 2, name: "Code Review for Project Alpha", user: "Eva Green", type: "Task Completion", date: "2024-05-20", status: "Completed" },
+    { id: 3, name: "Organize Q3 Hackathon", user: "Maria Garcia", type: "Task Completion", date: "2024-06-01", status: "In Progress" },
+    { id: 4, name: "Attend Flutter Meetup", user: "John P.", type: "Event Attendance", date: "2024-06-05", status: "Completed" },
 ];
 
 export function ActivityLogger() {
@@ -37,8 +39,8 @@ export function ActivityLogger() {
                 <Card>
                     <form onSubmit={handleLogActivity}>
                         <CardHeader>
-                            <CardTitle>Log an Activity</CardTitle>
-                            <CardDescription>Record your participation and contributions.</CardDescription>
+                            <CardTitle>Log a New Activity</CardTitle>
+                            <CardDescription>Record participation and contributions.</CardDescription>
                         </CardHeader>
                         <CardContent className="space-y-4">
                             <div className="space-y-2">
@@ -82,7 +84,10 @@ export function ActivityLogger() {
                                     </PopoverContent>
                                 </Popover>
                             </div>
-                            <Button className="w-full" type="submit">Log Activity</Button>
+                            <Button className="w-full" type="submit">
+                                <PlusCircle className="h-4 w-4 mr-2" />
+                                Log Activity
+                            </Button>
                         </CardContent>
                     </form>
                 </Card>
@@ -90,15 +95,15 @@ export function ActivityLogger() {
             <div className="md:col-span-2">
                 <Card>
                     <CardHeader>
-                        <CardTitle>My Activity History</CardTitle>
-                        <CardDescription>A record of your recent activities.</CardDescription>
+                        <CardTitle>Member Activity History</CardTitle>
+                        <CardDescription>A record of all member activities.</CardDescription>
                     </CardHeader>
                     <CardContent>
                         <Table>
                             <TableHeader>
                                 <TableRow>
                                     <TableHead>Activity</TableHead>
-                                    <TableHead className="hidden sm:table-cell">Type</TableHead>
+                                    <TableHead className="hidden sm:table-cell">Member</TableHead>
                                     <TableHead className="hidden md:table-cell">Date</TableHead>
                                     <TableHead>Status</TableHead>
                                 </TableRow>
@@ -107,10 +112,18 @@ export function ActivityLogger() {
                                 {activities.map((activity) => (
                                     <TableRow key={activity.id}>
                                         <TableCell className="font-medium">{activity.name}</TableCell>
-                                        <TableCell className="hidden sm:table-cell">{activity.type}</TableCell>
+                                        <TableCell className="hidden sm:table-cell">
+                                            <div className="flex items-center gap-2">
+                                                <Avatar className="h-6 w-6">
+                                                    <AvatarImage src={`https://placehold.co/40x40.png`} data-ai-hint="person face" />
+                                                    <AvatarFallback>{activity.user.charAt(0)}</AvatarFallback>
+                                                </Avatar>
+                                                <span>{activity.user}</span>
+                                            </div>
+                                        </TableCell>
                                         <TableCell className="hidden md:table-cell">{activity.date}</TableCell>
                                         <TableCell>
-                                            <Badge variant={activity.status === 'Completed' ? 'secondary' : 'outline'}>{activity.status}</Badge>
+                                            <Badge variant={activity.status === 'Completed' ? 'secondary' : 'outline'} className={activity.status === 'In Progress' ? 'border-yellow-500 text-yellow-700' : ''}>{activity.status}</Badge>
                                         </TableCell>
                                     </TableRow>
                                 ))}
