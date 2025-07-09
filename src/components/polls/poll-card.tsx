@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -18,20 +18,16 @@ const defaultOptions = ["Rust", "Zig", "Mojo", "TypeScript"];
 export function PollCard({ question = defaultQuestion, options = defaultOptions }: PollCardProps) {
     const [selectedOption, setSelectedOption] = useState<string | null>(null);
     const [hasVoted, setHasVoted] = useState(false);
-    
-    const initialVotes = useMemo(() => {
-        const generatedVotes: { name: string; votes: number }[] = [];
-        for (const option of options) {
-            generatedVotes.push({ name: option, votes: Math.floor(Math.random() * 50) + 5 });
-        }
-        return generatedVotes;
-    }, [options]);
-
     const [votes, setVotes] = useState<{ name: string; votes: number }[]>([]);
 
     useEffect(() => {
-      setVotes(initialVotes);
-    }, [initialVotes]);
+        // Generate initial votes on the client-side to prevent hydration errors.
+        const generatedVotes = options.map(option => ({
+            name: option,
+            votes: Math.floor(Math.random() * 50) + 5
+        }));
+        setVotes(generatedVotes);
+    }, [options]);
 
     const handleVote = () => {
         if (selectedOption) {
@@ -52,7 +48,7 @@ export function PollCard({ question = defaultQuestion, options = defaultOptions 
             <CardContent className="flex-1">
                 {hasVoted ? (
                     <div className="h-48">
-                        <PollResultsChart data={votes} />
+                        {votes.length > 0 && <PollResultsChart data={votes} />}
                     </div>
                 ) : (
                     <RadioGroup onValueChange={setSelectedOption}>

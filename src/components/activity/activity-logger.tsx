@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -25,8 +25,13 @@ const mockActivities = [
 
 export function ActivityLogger() {
     const [activities, setActivities] = useState(mockActivities);
-    const [date, setDate] = useState<Date | undefined>(new Date());
+    const [date, setDate] = useState<Date | undefined>();
     const { toast } = useToast();
+
+    useEffect(() => {
+        // Set date on client to avoid hydration mismatch
+        setDate(new Date());
+    }, []);
 
     const handleLogActivity = (e: React.FormEvent) => {
         e.preventDefault();
