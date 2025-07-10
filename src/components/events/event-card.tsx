@@ -49,7 +49,7 @@ export function EventCard({ title, date, location, description, image, dataAiHin
             </CardContent>
             <CardFooter>
                 {isRsvpd ? (
-                    <Button className="w-full" disabled variant="secondary">
+                    <Button className="w-full bg-google-green hover:bg-google-green/90" disabled>
                         <Check className="mr-2 h-4 w-4" />
                         Confirmed
                     </Button>
