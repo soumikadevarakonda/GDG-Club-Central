@@ -1,5 +1,6 @@
 import { GdgLogo } from "@/components/icons/gdg-logo";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 export function HeroBanner() {
   return (
@@ -23,8 +24,12 @@ export function HeroBanner() {
           Everything you need to manage your GDG community, from events and resources to member engagement, all in one place.
         </p>
         <div className="flex gap-2 mt-4">
-          <Button size="lg">Explore Events</Button>
-          <Button size="lg" variant="outline">Share a Resource</Button>
+          <Link href="/dashboard/events" passHref>
+            <Button size="lg">Explore Events</Button>
+          </Link>
+          <Link href="/dashboard/resources" passHref>
+            <Button size="lg" variant="outline">Share a Resource</Button>
+          </Link>
         </div>
       </div>
     </div>
