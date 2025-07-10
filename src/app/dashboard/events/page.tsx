@@ -3,39 +3,44 @@ import { CalendarDays, PlusCircle } from "lucide-react";
 import { EventCard } from "@/components/events/event-card";
 
 const mockEvents = [
-    {
-        title: "Summer Tech Fest 2024",
-        date: "August 15, 2024",
-        location: "Google Campus, Hyderabad, India",
-        description: "Our biggest event of the year! Join us for a full day of tech talks, workshops, and networking opportunities with industry experts.",
-        image: "https://placehold.co/600x400.png",
-        dataAiHint: "tech conference",
-    },
-    {
-        title: "AI/ML Workshop",
-        date: "July 28, 2024",
-        location: "Virtual / Google Meet",
-        description: "A hands-on workshop covering the fundamentals of machine learning with TensorFlow. No prior experience required.",
-        image: "https://placehold.co/600x400.png",
-        dataAiHint: "laptop code",
-    },
-    {
-        title: "Flutter Forward Extended",
-        date: "September 5, 2024",
-        location: "GDG, KL University",
-        description: "Catch up on the latest announcements from Flutter Forward and see live demos from local developers.",
-        image: "https://placehold.co/600x400.png",
-        dataAiHint: "mobile phone apps",
-    },
-     {
-        title: "Web Performance Deep Dive",
-        date: "September 20, 2024",
-        location: "Online",
-        description: "Learn how to optimize your web applications for speed and a better user experience with Core Web Vitals.",
-        image: "https://placehold.co/600x400.png",
-        dataAiHint: "website analytics",
-    }
+  {
+    title: "Summer Tech Fest 2024",
+    date: "August 15, 2024",
+    location: "Google Campus, Hyderabad, India",
+    description:
+      "Our biggest event of the year! Join us for a full day of tech talks, workshops, and networking opportunities with industry experts.",
+    image: "https://images.unsplash.com/photo-1626287935075-3275d2d9025e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2VtaW5hcnxlbnwwfHwwfHx8MA%3D%3D", // Flutter-like dev UI
+    dataAiHint: "tech conference",
+  },
+  {
+    title: "AI/ML Workshop",
+    date: "July 28, 2024",
+    location: "Virtual / Google Meet",
+    description:
+      "A hands-on workshop covering the fundamentals of machine learning with TensorFlow. No prior experience required.",
+    image: "https://images.unsplash.com/photo-1526378722484-bd91ca387e72?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGFydGlmaWNpYWwlMjBpbnRlbGxpZ2VuY2V8ZW58MHx8MHx8fDA%3D", // AI/ML code on screen
+    dataAiHint: "laptop code",
+  },
+  {
+    title: "Flutter Forward Extended",
+    date: "September 5, 2024",
+    location: "GDG, KL University",
+    description:
+      "Catch up on the latest announcements from Flutter Forward and see live demos from local developers.",
+    image: "https://images.unsplash.com/photo-1542831371-d531d36971e6", 
+    dataAiHint: "mobile phone apps",
+  },
+  {
+    title: "Web Performance Deep Dive",
+    date: "September 20, 2024",
+    location: "Online",
+    description:
+      "Learn how to optimize your web applications for speed and a better user experience with Core Web Vitals.",
+    image: "https://images.unsplash.com/photo-1654618977232-a6c6dea9d1e8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2ViJTIwZGV2fGVufDB8fDB8fHww", // web vitals/dashboard
+    dataAiHint: "website analytics",
+  },
 ];
+
 
 
 export default function EventsPage() {

@@ -1,9 +1,11 @@
+
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calendar, MapPin, Ticket } from "lucide-react";
+import { Calendar, MapPin, Ticket, Check } from "lucide-react";
 
 interface EventCardProps {
     title: string;
@@ -16,6 +18,12 @@ interface EventCardProps {
 
 
 export function EventCard({ title, date, location, description, image, dataAiHint }: EventCardProps) {
+    const [isRsvpd, setIsRsvpd] = useState(false);
+
+    const handleRsvp = () => {
+        setIsRsvpd(true);
+    };
+    
     return (
         <Card className="flex flex-col hover:scale-[1.02]">
             {image && (
@@ -40,10 +48,17 @@ export function EventCard({ title, date, location, description, image, dataAiHin
                 <p className="text-sm text-muted-foreground">{description}</p>
             </CardContent>
             <CardFooter>
-                <Button className="w-full">
-                    <Ticket className="mr-2 h-4 w-4" />
-                    RSVP Now
-                </Button>
+                {isRsvpd ? (
+                    <Button className="w-full" disabled variant="secondary">
+                        <Check className="mr-2 h-4 w-4" />
+                        Confirmed
+                    </Button>
+                ) : (
+                    <Button className="w-full" onClick={handleRsvp}>
+                        <Ticket className="mr-2 h-4 w-4" />
+                        RSVP Now
+                    </Button>
+                )}
             </CardFooter>
         </Card>
     );

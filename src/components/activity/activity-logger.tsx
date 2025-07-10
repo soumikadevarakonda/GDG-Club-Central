@@ -17,11 +17,48 @@ import { useToast } from "@/hooks/use-toast";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 const mockActivities = [
-    { id: 1, name: "Tech Talk: AI in Web Dev", user: "Soumika Devarakonda", type: "Event Attendance", date: "2024-05-15", status: "Completed", avatar: "https://placehold.co/40x40.png", hint: "woman face" },
-    { id: 2, name: "Code Review for Project Alpha", user: "Naisha Srinivas", type: "Task Completion", date: "2024-05-20", status: "Completed", avatar: "https://placehold.co/40x40.png", hint: "woman smiling" },
-    { id: 3, name: "Organize Q3 Hackathon", user: "Vijay Atul", type: "Task Completion", date: "2024-06-01", status: "In Progress", avatar: "https://placehold.co/40x40.png", hint: "man face" },
-    { id: 4, name: "Attend Flutter Meetup", user: "Saketh Kumar", type: "Event Attendance", date: "2024-06-05", status: "Completed", avatar: "https://placehold.co/40x40.png", hint: "man smiling" },
-];
+    {
+      id: 1,
+      name: "Tech Talk: AI in Web Dev",
+      user: "Naisha Ramesh",
+      type: "Event Attendance",
+      date: "2024-05-15",
+      status: "Completed",
+      avatar: "https://randomuser.me/api/portraits/women/44.jpg", 
+      hint: "woman face"
+    },
+    {
+      id: 2,
+      name: "Code Review for Project Alpha",
+      user: "Soumika Devarakonda",
+      type: "Task Completion",
+      date: "2024-05-20",
+      status: "Completed",
+      avatar: "https://randomuser.me/api/portraits/women/65.jpg", 
+      hint: "woman smiling"
+    },
+    {
+      id: 3,
+      name: "Organize Q3 Hackathon",
+      user: "Vijay Atul",
+      type: "Task Completion",
+      date: "2024-06-01",
+      status: "In Progress",
+      avatar: "https://randomuser.me/api/portraits/men/55.jpg", 
+      hint: "man face"
+    },
+    {
+      id: 4,
+      name: "Attend Flutter Meetup",
+      user: "Saketh Kumar",
+      type: "Event Attendance",
+      date: "2024-06-05",
+      status: "Completed",
+      avatar: "https://randomuser.me/api/portraits/men/33.jpg", 
+      hint: "man smiling"
+    },
+  ];
+  
 
 export function ActivityLogger() {
     const [activities, setActivities] = useState(mockActivities);

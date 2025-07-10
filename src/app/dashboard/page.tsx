@@ -8,10 +8,32 @@ import { Users, Calendar, FolderKanban, TrendingUp } from "lucide-react";
 import { HeroBanner } from "@/components/dashboard/hero-banner";
 
 const recentActivities = [
-  { name: "Soumika Devarakonda", avatar: "https://placehold.co/40x40.png", hint: "woman face", action: "uploaded a new resource:", item: "Advanced TypeScript Guide", time: "2h ago" },
-  { name: "Priyansh Saxena", avatar: "https://placehold.co/40x40.png", hint: "man face", action: "RSVP'd to event:", item: "Summer Tech Fest 2024", time: "5h ago" },
-  { name: "Aditya Vaitla", avatar: "https://placehold.co/40x40.png", hint: "woman smiling", action: "logged an activity:", item: "Mentored new members", time: "1d ago" },
+  {
+    name: "Soumika Devarakonda",
+    avatar: "https://randomuser.me/api/portraits/women/65.jpg", // woman face
+    hint: "woman face",
+    action: "uploaded a new resource:",
+    item: "Advanced TypeScript Guide",
+    time: "2h ago"
+  },
+  {
+    name: "Priyansh Saxena",
+    avatar: "https://randomuser.me/api/portraits/men/75.jpg", // man face
+    hint: "man face",
+    action: "RSVP'd to event:",
+    item: "Summer Tech Fest 2024",
+    time: "5h ago"
+  },
+  {
+    name: "Aditya Vaitla",
+    avatar: "https://randomuser.me/api/portraits/men/48.jpg", // man smiling
+    hint: "man smiling",
+    action: "logged an activity:",
+    item: "Mentored new members",
+    time: "1d ago"
+  }
 ];
+
 
 export default function DashboardPage() {
   return (
@@ -38,7 +60,7 @@ export default function DashboardPage() {
                     date="August 15, 2024"
                     location="Google Campus, Hyderabad, India"
                     description="Our biggest event of the year! Join us for a full day of tech talks, workshops, and networking."
-                    image="https://placehold.co/600x400.png"
+                    image="https://images.unsplash.com/photo-1626287935075-3275d2d9025e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2VtaW5hcnxlbnwwfHwwfHx8MA%3D%3D" // Flutter-like dev UI
                     dataAiHint="tech conference"
                 />
                 <EventCard 
@@ -46,7 +68,7 @@ export default function DashboardPage() {
                     date="July 28, 2024"
                     location="Virtual / Google Meet"
                     description="A hands-on workshop covering the fundamentals of machine learning with TensorFlow."
-                    image="https://placehold.co/600x400.png"
+                    image="https://images.unsplash.com/photo-1526378722484-bd91ca387e72?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGFydGlmaWNpYWwlMjBpbnRlbGxpZ2VuY2V8ZW58MHx8MHx8fDA%3D"
                     dataAiHint="laptop code"
                 />
             </CardContent>

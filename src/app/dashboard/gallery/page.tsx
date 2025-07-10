@@ -3,7 +3,7 @@ import { PhotoCard } from "@/components/gallery/photo-card";
 import { GalleryVertical, PlusCircle } from "lucide-react";
 
 const mockImages = [
-  { src: "https://placehold.co/600x400.png", alt: "Team photo from the 2023 Hackathon", dataAiHint: "group people" },
+  { src: "https://drive.google.com/uc?export=view&id=18wt61VOQ21RBWr0I30JsbXFC-kulranu", alt: "Team photo from the 2024 Hackathon", dataAiHint: "group people" },
   { src: "https://placehold.co/400x600.png", alt: "Winning project demo", dataAiHint: "laptop presentation" },
   { src: "https://placehold.co/600x400.png", alt: "Networking session", dataAiHint: "people talking" },
   { src: "https://placehold.co/600x400.png", alt: "Keynote speaker on stage", dataAiHint: "person stage" },
