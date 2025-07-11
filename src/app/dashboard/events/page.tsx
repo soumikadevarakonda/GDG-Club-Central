@@ -52,6 +52,15 @@ const initialEvents: Event[] = [
     image: "https://images.unsplash.com/photo-1654618977232-a6c6dea9d1e8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2ViJTIwZGV2fGVufDB8fDB8fHww", // web vitals/dashboard
     dataAiHint: "website analytics",
   },
+  {
+    title: "CodeSprint Hackathon 2025",
+    date: "August 25, 2025",
+    location: "T-Hub, Hyderabad, India",
+    description:
+      "Gear up for 24 hours of coding, creativity, and collaboration! CodeSprint brings together developers, designers, and innovators to build impactful solutions and win exciting prizes.",
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFja2F0aG9ufGVufDB8fDB8fHww",
+    dataAiHint: "hackathon coding",
+  },  
 ];
 
 export default function EventsPage() {

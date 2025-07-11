@@ -7,15 +7,17 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { PollResultsChart } from "./poll-results-chart";
 
-interface PollCardProps {
-    question?: string;
-    options?: string[];
+export interface Poll {
+    question: string;
+    options: string[];
 }
 
-const defaultQuestion = "Which programming language are you most excited about in 2024?";
-const defaultOptions = ["Rust", "Zig", "Mojo", "TypeScript"];
+interface PollCardProps {
+    question: string;
+    options: string[];
+}
 
-export function PollCard({ question = defaultQuestion, options = defaultOptions }: PollCardProps) {
+export function PollCard({ question, options }: PollCardProps) {
     const [selectedOption, setSelectedOption] = useState<string | null>(null);
     const [hasVoted, setHasVoted] = useState(false);
     const [votes, setVotes] = useState<{ name: string; votes: number }[]>([]);
