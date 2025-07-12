@@ -60,12 +60,12 @@ export function MainSidebar() {
       <SidebarFooter>
         <div className="flex items-center gap-3 p-2 group-data-[collapsible=icon]:p-0 group-data-[collapsible=icon]:justify-center">
             <Avatar className="size-10">
-                <AvatarImage src="https://placehold.co/40x40" alt="User" data-ai-hint="person face" />
+                <AvatarImage src="https://randomuser.me/api/portraits/women/65.jpg" alt="User" data-ai-hint="person face" />
                 <AvatarFallback>AD</AvatarFallback>
             </Avatar>
             <div className="flex flex-col group-data-[collapsible=icon]:hidden">
-                <p className="font-semibold text-sidebar-foreground">Soumika Devarakonda</p>
-                <p className="text-sm text-sidebar-foreground/70">soumikadev@gmail.com</p>
+                <p className="font-semibold text-sidebar-foreground">Google User</p>
+                <p className="text-sm text-sidebar-foreground/70">user@google.com</p>
             </div>
              <Link href="/" className="ml-auto group-data-[collapsible=icon]:hidden">
                 <Button variant="ghost" size="icon" className="text-sidebar-foreground hover:bg-sidebar-accent/20 hover:text-sidebar-foreground">

@@ -1,12 +1,12 @@
 import Image from "next/image";
 
-interface PhotoCardProps {
+export interface Photo {
     src: string;
     alt: string;
     dataAiHint?: string;
 }
 
-export function PhotoCard({ src, alt, dataAiHint }: PhotoCardProps) {
+export function PhotoCard({ src, alt, dataAiHint }: Photo) {
     return (
         <div className="group relative aspect-square overflow-hidden rounded-2xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105">
             <Image 

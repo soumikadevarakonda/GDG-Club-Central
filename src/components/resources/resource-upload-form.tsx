@@ -102,8 +102,8 @@ export function ResourceUploadForm() {
                         </Select>
                     </div>
                     <div className="space-y-2">
-                        <Label>Tags</Label>
-                        <Button type="button" variant="outline" size="sm" onClick={handleSuggestTags} disabled={isSuggesting}>
+                    <Label className="mb-1 block">Tags</Label>
+                    <Button type="button" variant="outline" size="sm" onClick={handleSuggestTags} disabled={isSuggesting}>
                             {isSuggesting ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Sparkles className="mr-2 h-4 w-4" />}
                             Suggest with AI
                         </Button>

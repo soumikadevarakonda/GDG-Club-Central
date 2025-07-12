@@ -10,7 +10,7 @@ const mockResources = [
     link: "#",
     category: "Frontend",
     tags: ["React", "Next.js", "Server Components"],
-    image: "https://placehold.co/600x400.png",
+    image: "https://images.unsplash.com/photo-1687603921109-46401b201195?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmVhY3QuanN8ZW58MHx8MHx8fDA%3D",
     dataAiHint: "code programming",
   },
   {
@@ -18,7 +18,7 @@ const mockResources = [
     link: "#",
     category: "Backend",
     tags: ["TypeScript", "Node.js", "Architecture"],
-    image: "https://placehold.co/600x400.png",
+    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d29ya2luZ3xlbnwwfHwwfHx8MA%3D%3D",
     dataAiHint: "abstract geometric",
   },
   {
@@ -26,7 +26,7 @@ const mockResources = [
     link: "#",
     category: "DevOps",
     tags: ["Docker", "Kubernetes", "CI/CD"],
-    image: "https://placehold.co/600x400.png",
+    image: "https://images.unsplash.com/photo-1646627927863-19874c27316b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZG9ja2VyfGVufDB8fDB8fHww",
     dataAiHint: "shipping containers",
   },
   {
@@ -34,7 +34,7 @@ const mockResources = [
     link: "#",
     category: "Design",
     tags: ["Accessibility", "UI/UX", "Web Dev"],
-    image: "https://placehold.co/600x400.png",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d2VifGVufDB8fDB8fHww",
     dataAiHint: "user interface",
   },
 ];
