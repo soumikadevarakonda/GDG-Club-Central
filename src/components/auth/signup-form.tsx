@@ -6,23 +6,27 @@ import { Label } from "@/components/ui/label";
 import { useRouter } from 'next/navigation';
 import Link from "next/link";
 
-export function LoginForm() {
+export function SignUpForm() {
   const router = useRouter();
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleSignUp = (e: React.FormEvent) => {
     e.preventDefault();
-    // This is a mock login. In a real app, you'd handle Firebase auth here.
+    // This is a mock signup. In a real app, you'd handle Firebase auth here.
     router.push('/dashboard');
   };
 
   return (
     <Card>
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleSignUp}>
         <CardHeader>
-          <CardTitle>Login</CardTitle>
-          <CardDescription>Enter your credentials to access your account.</CardDescription>
+          <CardTitle>Sign Up</CardTitle>
+          <CardDescription>Fill in your details to create an account.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
+           <div className="space-y-2">
+            <Label htmlFor="name">Full Name</Label>
+            <Input id="name" type="text" placeholder="Ada Lovelace" required />
+          </div>
           <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
             <Input id="email" type="email" placeholder="m@example.com" required />
@@ -33,11 +37,11 @@ export function LoginForm() {
           </div>
         </CardContent>
         <CardFooter className="flex flex-col gap-4">
-          <Button type="submit" className="w-full">Sign In</Button>
-          <p className="text-xs text-muted-foreground text-center">
-            Don&apos;t have an account?{' '}
-            <Link href="/signup" className="underline underline-offset-2 hover:text-primary">
-              Sign Up
+          <Button type="submit" className="w-full">Create Account</Button>
+           <p className="text-xs text-muted-foreground text-center">
+            Already have an account?{' '}
+            <Link href="/" className="underline underline-offset-2 hover:text-primary">
+              Sign In
             </Link>
           </p>
         </CardFooter>
