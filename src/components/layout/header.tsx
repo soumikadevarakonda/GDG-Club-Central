@@ -40,16 +40,20 @@ export function Header() {
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" className="relative h-8 w-8 rounded-full">
             <Avatar className="h-9 w-9">
-              <AvatarImage src="https://randomuser.me/api/portraits/women/65.jpg" alt="@shadcn" data-ai-hint="person face"/>
-              <AvatarFallback>AD</AvatarFallback>
+              <AvatarImage src="https://drive.google.com/uc?export=view&id=1ONGbGTGZGfItn5pa9o264Fgzvo5m0v7H" alt="User Avatar" data-ai-hint="person face"/>
+              <AvatarFallback>U</AvatarFallback>
             </Avatar>
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
           <DropdownMenuLabel>My Account</DropdownMenuLabel>
           <DropdownMenuSeparator />
-          <DropdownMenuItem>Settings</DropdownMenuItem>
-          <DropdownMenuItem>Support</DropdownMenuItem>
+          <Link href="/dashboard/settings" passHref>
+            <DropdownMenuItem>Settings</DropdownMenuItem>
+          </Link>
+          <Link href="/dashboard/support" passHref>
+            <DropdownMenuItem>Support</DropdownMenuItem>
+          </Link>
           <DropdownMenuSeparator />
            <Link href="/" passHref>
             <DropdownMenuItem>Logout</DropdownMenuItem>

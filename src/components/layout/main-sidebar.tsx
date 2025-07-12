@@ -11,11 +11,11 @@ import {
   SidebarContent,
 } from "@/components/ui/sidebar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Home, BookCopy, ListChecks, CalendarDays, BarChart3, GalleryVertical, LogOut, Settings } from "lucide-react";
+import { Home, BookCopy, ListChecks, CalendarDays, BarChart3, GalleryVertical, LogOut, Settings, LifeBuoy } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { GoogleColoredLogo } from "../icons/google-colored-logo";
+import { GdgLogo } from "../icons/gdg-logo";
 
 export function MainSidebar() {
   const pathname = usePathname();
@@ -29,12 +29,17 @@ export function MainSidebar() {
     { href: "/dashboard/gallery", label: "Gallery", icon: GalleryVertical },
   ];
 
+  const bottomMenuItems = [
+    { href: "/dashboard/settings", label: "Settings", icon: Settings },
+    { href: "/dashboard/support", label: "Support", icon: LifeBuoy },
+  ];
+
   return (
     <Sidebar>
       <SidebarHeader>
         <div className="flex items-center gap-2">
             <Link href="/dashboard" className="flex items-center gap-2">
-                <GoogleColoredLogo className="w-8 h-8" />
+                <GdgLogo className="w-8 h-8" />
                 <div className="flex flex-col group-data-[collapsible=icon]:hidden">
                     <h2 className="font-semibold text-lg text-sidebar-foreground">Club Central</h2>
                 </div>
@@ -43,8 +48,20 @@ export function MainSidebar() {
       </SidebarHeader>
       
       <SidebarContent>
-        <SidebarMenu>
+        <SidebarMenu className="flex-1">
             {menuItems.map((item) => (
+            <SidebarMenuItem key={item.href}>
+                <Link href={item.href} legacyBehavior passHref>
+                <SidebarMenuButton isActive={pathname === item.href} tooltip={item.label}>
+                    <item.icon />
+                    <span>{item.label}</span>
+                </SidebarMenuButton>
+                </Link>
+            </SidebarMenuItem>
+            ))}
+        </SidebarMenu>
+        <SidebarMenu>
+            {bottomMenuItems.map((item) => (
             <SidebarMenuItem key={item.href}>
                 <Link href={item.href} legacyBehavior passHref>
                 <SidebarMenuButton isActive={pathname === item.href} tooltip={item.label}>
@@ -60,12 +77,12 @@ export function MainSidebar() {
       <SidebarFooter>
         <div className="flex items-center gap-3 p-2 group-data-[collapsible=icon]:p-0 group-data-[collapsible=icon]:justify-center">
             <Avatar className="size-10">
-                <AvatarImage src="https://randomuser.me/api/portraits/women/65.jpg" alt="User" data-ai-hint="person face" />
-                <AvatarFallback>AD</AvatarFallback>
+                <AvatarImage src="https://drive.google.com/uc?export=view&id=1ONGbGTGZGfItn5pa9o264Fgzvo5m0v7H" alt="User" data-ai-hint="person face" />
+                <AvatarFallback>U</AvatarFallback>
             </Avatar>
             <div className="flex flex-col group-data-[collapsible=icon]:hidden">
-                <p className="font-semibold text-sidebar-foreground">GDG Core</p>
-                <p className="text-sm text-sidebar-foreground/70">user@google.com</p>
+                <p className="font-semibold text-sidebar-foreground">User</p>
+                <p className="text-sm text-sidebar-foreground/70">user@example.com</p>
             </div>
              <Link href="/" className="ml-auto group-data-[collapsible=icon]:hidden">
                 <Button variant="ghost" size="icon" className="text-sidebar-foreground hover:bg-sidebar-accent/20 hover:text-sidebar-foreground">
