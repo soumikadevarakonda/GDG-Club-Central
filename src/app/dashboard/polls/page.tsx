@@ -78,7 +78,7 @@ export default function PollsPage() {
       </div>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {polls.map((poll, index) => (
-          <PollCard key={index} question={poll.question} options={poll.options} />
+          <PollCard key={`${poll.question}-${index}`} question={poll.question} options={poll.options} />
         ))}
       </div>
     </div>

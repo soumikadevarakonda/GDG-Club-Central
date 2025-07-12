@@ -64,7 +64,7 @@ export function MainSidebar() {
                 <AvatarFallback>AD</AvatarFallback>
             </Avatar>
             <div className="flex flex-col group-data-[collapsible=icon]:hidden">
-                <p className="font-semibold text-sidebar-foreground">Google User</p>
+                <p className="font-semibold text-sidebar-foreground">GDG Core</p>
                 <p className="text-sm text-sidebar-foreground/70">user@google.com</p>
             </div>
              <Link href="/" className="ml-auto group-data-[collapsible=icon]:hidden">
