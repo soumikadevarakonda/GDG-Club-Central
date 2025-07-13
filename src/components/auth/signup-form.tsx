@@ -1,3 +1,4 @@
+
 "use client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -12,7 +13,7 @@ export function SignUpForm() {
   const handleSignUp = (e: React.FormEvent) => {
     e.preventDefault();
     // This is a mock signup. In a real app, you'd handle Firebase auth here.
-    router.push('/dashboard');
+    router.push('/');
   };
 
   return (
