@@ -40,7 +40,7 @@ export function Header() {
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" className="relative h-8 w-8 rounded-full">
             <Avatar className="h-9 w-9">
-              <AvatarImage src="https://drive.google.com/uc?export=view&id=1ONGbGTGZGfItn5pa9o264Fgzvo5m0v7H" alt="User Avatar" data-ai-hint="person face"/>
+              <AvatarImage src="https://randomuser.me/api/portraits/women/65.jpg" alt="User Avatar" data-ai-hint="person face"/>
               <AvatarFallback>U</AvatarFallback>
             </Avatar>
           </Button>
