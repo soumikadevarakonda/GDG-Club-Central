@@ -77,7 +77,7 @@ export function MainSidebar() {
       <SidebarFooter>
         <div className="flex items-center gap-3 p-2 group-data-[collapsible=icon]:p-0 group-data-[collapsible=icon]:justify-center">
             <Avatar className="size-10">
-                <AvatarImage src="https://drive.google.com/uc?export=view&id=1ONGbGTGZGfItn5pa9o264Fgzvo5m0v7H" alt="User" data-ai-hint="person face" />
+                <AvatarImage src="https://randomuser.me/api/portraits/women/65.jpg" alt="User" data-ai-hint="person face" />
                 <AvatarFallback>U</AvatarFallback>
             </Avatar>
             <div className="flex flex-col group-data-[collapsible=icon]:hidden">

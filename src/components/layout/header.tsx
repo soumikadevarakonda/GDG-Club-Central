@@ -14,15 +14,15 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { SidebarTrigger } from "../ui/sidebar";
 import Link from "next/link";
-import { GoogleColoredLogo } from "../icons/google-colored-logo";
+import { GdgLogo } from "../icons/gdg-logo";
 
 export function Header() {
   return (
     <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-card px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
         <SidebarTrigger className="sm:hidden" />
-        <div className="flex items-center gap-2">
-            <GoogleColoredLogo className="h-8 w-auto hidden sm:block" />
-            <h1 className="text-xl font-semibold hidden sm:block">GDG Club Central</h1>
+        <div className="flex items-center gap-2 sm:hidden">
+            <GdgLogo className="h-8 w-auto" />
+            <h1 className="text-xl font-semibold">Club Central</h1>
         </div>
       <div className="relative ml-auto flex-1 md:grow-0">
         <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
